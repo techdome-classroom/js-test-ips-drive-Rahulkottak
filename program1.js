@@ -9,22 +9,22 @@ function smallestMissingPositiveInteger(nums) {
       }
   }
   
-   const positiveNums = nums.slice(j);
+   const x = nums.slice(j);
   
-   for (let i = 0; i < positiveNums.length; i++) {
-      const index = Math.abs(positiveNums[i]) - 1;
-      if (index < positiveNums.length && positiveNums[index] > 0) {
-          positiveNums[index] = -positiveNums[index];
+   for (let i = 0; i < x.length; i++) {
+      const index = Math.abs(x[i]) - 1;
+      if (index < x.length && x[index] > 0) {
+          x[index] = -x[index];
       }
   }
   
-   for (let i = 0; i < positiveNums.length; i++) {
-      if (positiveNums[i] > 0) {
+   for (let i = 0; i < x.length; i++) {
+      if (x[i] > 0) {
           return i + 1;
       }
   }
   
-   return positiveNums.length + 1;
+   return x.length + 1;
 }
 
 module.exports = smallestMissingPositiveInteger;
